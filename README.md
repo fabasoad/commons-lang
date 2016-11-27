@@ -1,5 +1,7 @@
 # Commons library with helpful classes
 
+[![Release](https://jitpack.io/v/fabasoad/Repo.svg)](https://jitpack.io/#fabasoad/commons-lang)
+
 ## List of classes
 
 - org.fabasoad.annotations.UsedViaReflection
