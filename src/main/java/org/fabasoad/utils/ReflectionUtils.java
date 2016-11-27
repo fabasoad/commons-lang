@@ -16,16 +16,18 @@ import java.util.function.Consumer;
  */
 public class ReflectionUtils {
 
-    private static Reflections reflections = new Reflections(new ConfigurationBuilder()
-            .setUrls(ClasspathHelper.forPackage("org.fabasoad.poe"))
-            .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner()));
-
-    public static <T extends Annotation> Set<Class<?>> getTypesAnnotatedWith(Class<T> annotation) {
-        return reflections.getTypesAnnotatedWith(annotation);
+    private static Reflections create(String packageName) {
+        return new Reflections(new ConfigurationBuilder()
+                .setUrls(ClasspathHelper.forPackage(packageName))
+                .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner()));
     }
 
-    public static <T> Set<Class<? extends T>> getSubTypesOf(Class<T> clazz) {
-        return reflections.getSubTypesOf(clazz);
+    public static <T extends Annotation> Set<Class<?>> getTypesAnnotatedWith(String packageName, Class<T> annotation) {
+        return create(packageName).getTypesAnnotatedWith(annotation);
+    }
+
+    public static <T> Set<Class<? extends T>> getSubTypesOf(String packageName, Class<T> clazz) {
+        return create(packageName).getSubTypesOf(clazz);
     }
 
     public static <T, R> Optional<R> invokeThrowable(
