@@ -9,7 +9,6 @@ import static java.util.Objects.nonNull;
 
 /**
  * @author Yevhen Fabizhevskyi
- * @date 23.04.2016.
  */
 public class StreamUtils {
 

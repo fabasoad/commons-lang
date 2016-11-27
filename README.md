@@ -1,6 +1,6 @@
 # Commons library with helpful classes
 
-[![Release](https://jitpack.io/v/fabasoad/Repo.svg)](https://jitpack.io/#fabasoad/commons-lang)
+[![0.1](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang)
 
 ## List of classes
 

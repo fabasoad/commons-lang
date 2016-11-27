@@ -6,7 +6,6 @@ import java.util.Date;
 
 /**
  * @author Yevhen Fabizhevskyi
- * @date 02.04.2016.
  */
 public class Logger {
 

@@ -13,7 +13,6 @@ import java.util.function.Consumer;
 
 /**
  * @author Yevhen Fabizhevskyi
- * @date 23.04.2016.
  */
 public class ReflectionUtils {
 
