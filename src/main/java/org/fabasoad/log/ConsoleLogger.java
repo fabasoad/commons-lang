@@ -17,22 +17,27 @@ class ConsoleLogger implements Logger {
 
     @Override
     public void error(Class clazz, String message) {
-        log(System.err, clazz, "ERROR", message);
+        log(System.err, clazz, LogLevel.ERROR, message);
     }
 
     @Override
     public void flow(Class clazz, String message) {
-        log(System.out, clazz, "FLOW", message);
+        log(System.out, clazz, LogLevel.FLOW, message);
     }
 
     @Override
     public void warning(Class clazz, String message) {
-        log(System.out, clazz, "WARNING", message);
+        log(System.out, clazz, LogLevel.WARNING, message);
     }
 
-    private static void log(PrintStream printStream, Class clazz, String logType, String message) {
+    @Override
+    public void debug(Class clazz, String message) {
+        log(System.out, clazz, LogLevel.DEBUG, message);
+    }
+
+    private static void log(PrintStream printStream, Class clazz, LogLevel logLevel, String message) {
         printStream.println(String.format("[%s] [%s] [%s] %s",
-                DATE_FORMAT.format(new Date()), logType, clazz.getSimpleName(), message));
+                DATE_FORMAT.format(new Date()), logLevel.name(), clazz.getSimpleName(), message));
     }
 
     @Override

@@ -11,4 +11,6 @@ public interface Logger {
     void flow(Class clazz, String message);
 
     void warning(Class clazz, String message);
+
+    void debug(Class clazz, String message);
 }
