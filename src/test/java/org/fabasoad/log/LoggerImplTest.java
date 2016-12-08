@@ -1,7 +1,8 @@
 package org.fabasoad.log;
 
+import com.google.common.collect.ImmutableMap;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.fabasoad.function.TriConsumer;
+import org.apache.commons.lang3.tuple.Pair;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,15 +10,15 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.EnumSet;
+import java.util.Map;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;
 
 /**
  * @author efabizhevsky
- * @date 11/27/2016.
  */
 public class LoggerImplTest {
 
@@ -58,48 +59,78 @@ public class LoggerImplTest {
         System.setErr(oldErr);
     }
 
-    private void testOutput(LogLevel logLevel, TriConsumer<Logger, Class, String> consumer, ByteArrayOutputStream outputStream) {
-        Logger logger = LoggerImpl.getInstance(prepareConfiguration(EnumSet.of(logLevel)));
-        String message = RandomStringUtils.randomAlphabetic(10);
-        consumer.accept(logger, getClass(), message);
-        assertTrue(outputStream.toString().contains(message));
-        assertTrue(outputStream.toString().contains(logLevel.name()));
+    private void testOutput(Map<Pair<LogLevel, ByteArrayOutputStream>, Function<Logger, BiConsumer<Class, String>>> map) {
+        final EnumSet<LogLevel> logLevels =
+                EnumSet.copyOf(map.keySet().stream().map(Pair::getLeft).collect(Collectors.toList()));
+        final Logger logger = LoggerImpl.getInstance(prepareConfiguration(logLevels));
+        map.forEach((pair, function) -> {
+            String message = RandomStringUtils.randomAlphabetic(10);
+            function.apply(logger).accept(getClass(), message);
+            assertTrue(pair.getRight().toString().contains(message));
+            assertTrue(pair.getRight().toString().contains(pair.getLeft().name()));
+        });
     }
 
     @Test
     public void testError() {
-        testOutput(LogLevel.ERROR,);
-        Logger logger = LoggerImpl.getInstance(prepareConfiguration(EnumSet.of(LogLevel.ERROR)));
-        String message = "test error";
-        logger.error(getClass(), message);
-        assertTrue(outputStreamErr.toString().contains(message));
-        assertTrue(outputStreamErr.toString().contains(LogLevel.ERROR.name()));
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.ERROR, outputStreamErr), l -> l::error
+        ));
     }
 
     @Test
     public void testWarning() {
-        Logger logger = LoggerImpl.getInstance(prepareConfiguration(EnumSet.of(LogLevel.WARNING)));
-        String message = "test warning";
-        logger.warning(getClass(), message);
-        assertTrue(outputStreamOut.toString().contains(message));
-        assertTrue(outputStreamOut.toString().contains(LogLevel.WARNING.name()));
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.WARNING, outputStreamOut), l -> l::warning
+        ));
     }
 
     @Test
     public void testFlow() {
-        Logger logger = LoggerImpl.getInstance(prepareConfiguration(EnumSet.of(LogLevel.FLOW)));
-        String message = "test flow";
-        logger.flow(getClass(), message);
-        assertTrue(outputStreamOut.toString().contains(message));
-        assertTrue(outputStreamOut.toString().contains(LogLevel.FLOW.name()));
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.FLOW, outputStreamOut), l -> l::flow
+        ));
     }
 
     @Test
     public void testDebug() {
-        Logger logger = LoggerImpl.getInstance(prepareConfiguration(EnumSet.of(LogLevel.DEBUG)));
-        String message = "test debug";
-        logger.debug(getClass(), message);
-        assertTrue(outputStreamOut.toString().contains(message));
-        assertTrue(outputStreamOut.toString().contains(LogLevel.DEBUG.name()));
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.DEBUG, outputStreamOut), l -> l::debug
+        ));
+    }
+
+    @Test
+    public void testFlowDebug() {
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.FLOW, outputStreamOut), l -> l::flow,
+                Pair.of(LogLevel.DEBUG, outputStreamOut), l -> l::debug
+        ));
+    }
+
+    @Test
+    public void testWarningDebug() {
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.WARNING, outputStreamOut), l -> l::warning,
+                Pair.of(LogLevel.DEBUG, outputStreamOut), l -> l::debug
+        ));
+    }
+
+    @Test
+    public void testWarningFlowDebug() {
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.WARNING, outputStreamOut), l -> l::warning,
+                Pair.of(LogLevel.FLOW, outputStreamOut), l -> l::flow,
+                Pair.of(LogLevel.DEBUG, outputStreamOut), l -> l::debug
+        ));
+    }
+
+    @Test
+    public void testWarningFlowDebugError() {
+        testOutput(ImmutableMap.of(
+                Pair.of(LogLevel.WARNING, outputStreamOut), l -> l::warning,
+                Pair.of(LogLevel.FLOW, outputStreamOut), l -> l::flow,
+                Pair.of(LogLevel.DEBUG, outputStreamOut), l -> l::debug,
+                Pair.of(LogLevel.ERROR, outputStreamErr), l -> l::error
+        ));
     }
 }
