@@ -13,8 +13,8 @@ public class BCryptTest {
     @Test
     public void testDecrypt() {
         String plainText = "test string";
-        String decryptedText = CryptoUtils.BCrypt.decrypt(plainText);
+        String encryptedText = CryptoUtils.BCrypt.encrypt(plainText);
 
-        assertTrue(CryptoUtils.BCrypt.matches(plainText, decryptedText));
+        assertTrue(CryptoUtils.BCrypt.matches(plainText, encryptedText));
     }
 }

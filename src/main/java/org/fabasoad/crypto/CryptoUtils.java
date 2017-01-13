@@ -12,12 +12,12 @@ public class CryptoUtils {
 
     static class BCrypt {
 
-        static String decrypt(String value) {
+        static String encrypt(String value) {
             return hashpw(value, gensalt(12));
         }
 
-        static boolean matches(String plain, String decrypted) {
-            return checkpw(plain, decrypted);
+        static boolean matches(String plain, String encrypted) {
+            return checkpw(plain, encrypted);
         }
     }
 }
