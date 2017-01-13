@@ -10,13 +10,13 @@ import static org.fabasoad.crypto.BCrypt.hashpw;
  */
 public class CryptoUtils {
 
-    static class BCrypt {
+    public static class BCrypt {
 
-        static String encrypt(String value) {
+        public static String encrypt(String value) {
             return hashpw(value, gensalt(12));
         }
 
-        static boolean matches(String plain, String encrypted) {
+        public static boolean matches(String plain, String encrypted) {
             return checkpw(plain, encrypted);
         }
     }
