@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class BCryptTest {
 
     @Test
-    public void testDecrypt() {
+    public void testEncrypt() {
         String salt = CryptoUtils.BCrypt.genSalt();
         String plainText = "test string";
 
