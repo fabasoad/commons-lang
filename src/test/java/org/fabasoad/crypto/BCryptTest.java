@@ -13,7 +13,7 @@ public class BCryptTest {
 
     @Test
     public void testDecrypt() {
-        String salt = CryptoUtils.BCrypt.getSalt();
+        String salt = CryptoUtils.BCrypt.genSalt();
         String plainText = "test string";
 
         String encryptedText1 = CryptoUtils.BCrypt.encrypt(plainText, salt);

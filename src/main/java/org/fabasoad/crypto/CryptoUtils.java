@@ -12,7 +12,7 @@ public class CryptoUtils {
 
     public static class BCrypt {
 
-        public static String getSalt() {
+        public static String genSalt() {
             return gensalt(12);
         }
 
