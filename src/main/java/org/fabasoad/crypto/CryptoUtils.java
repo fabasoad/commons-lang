@@ -12,8 +12,12 @@ public class CryptoUtils {
 
     public static class BCrypt {
 
-        public static String encrypt(String value) {
-            return hashpw(value, gensalt(12));
+        public static String getSalt() {
+            return gensalt(12);
+        }
+
+        public static String encrypt(String value, String salt) {
+            return hashpw(value, salt);
         }
 
         public static boolean matches(String plain, String encrypted) {
