@@ -4,7 +4,7 @@ import java.util.EnumSet;
 
 /**
  * @author efabizhevsky
- * @date 12/8/2016.
+ * created on 12/8/2016.
  */
 public class Configuration {
 

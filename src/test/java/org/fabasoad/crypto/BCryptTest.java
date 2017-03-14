@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * @author efabizhevsky
- * @date 1/13/2017.
+ * created on 1/13/2017.
  */
 public class BCryptTest {
 

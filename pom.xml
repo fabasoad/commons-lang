@@ -7,9 +7,9 @@
 
     <groupId>org.fabasoad</groupId>
     <artifactId>commons-lang</artifactId>
-    <version>0.2</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
-    <url>https://jitpack.io/#fabasoad/commons-lang/0.1</url>
+    <url>https://jitpack.io/#fabasoad/commons-lang/0.3.0</url>
 
     <properties>
         <reflections.version>0.9.10</reflections.version>
