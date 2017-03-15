@@ -14,7 +14,6 @@
     <properties>
         <reflections.version>0.9.10</reflections.version>
         <commons-lang3.version>3.5</commons-lang3.version>
-        <javax.ws.rs-api.version>2.1-m01</javax.ws.rs-api.version>
     </properties>
 
     <build>
@@ -65,11 +64,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>${javax.ws.rs-api.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
