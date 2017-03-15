@@ -1,6 +1,6 @@
 # Commons library with helpful classes
 
-[![](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang/0.3.0)
+[![](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang/0.3.1)
 
 ## List of items
 
@@ -21,18 +21,5 @@
 
 ### Maven
 
-- Add the following dependency:
-```xml
-<dependency>
-    <groupId>com.github.fabasoad</groupId>
-    <artifactId>commons-lang</artifactId>
-    <version>0.3.0</version>
-</dependency>
-```
-- Add the following repository:
-```xml
-<repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-</repository>
-```
+Follow the link below to see the installation details for _gradle_, _maven_, _sbt_ and _leiningen_.
+https://jitpack.io/#fabasoad/commons-lang/0.3.1
