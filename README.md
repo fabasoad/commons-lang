@@ -6,6 +6,7 @@
 
 - org.fabasoad.annotations.UsedViaReflection
 - org.fabasoad.crypto.CryptoUtils.BCrypt
+- org.fabasoad.function.FourConsumer
 - org.fabasoad.function.FunctionThrowable
 - org.fabasoad.function.TriConsumer
 - org.fabasoad.log.Configuration
