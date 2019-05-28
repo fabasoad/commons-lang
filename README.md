@@ -1,6 +1,7 @@
 # Commons library with helpful classes
 
 [![](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang/0.3.1)
+[![Build Status](https://travis-ci.org/fabasoad/commons-lang.svg?branch=master)](https://travis-ci.org/fabasoad/commons-lang)
 
 ## List of items
 
