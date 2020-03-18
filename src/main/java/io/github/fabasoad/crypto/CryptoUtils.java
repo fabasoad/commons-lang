@@ -4,10 +4,6 @@ import static io.github.fabasoad.crypto.BCrypt.checkpw;
 import static io.github.fabasoad.crypto.BCrypt.genSalt;
 import static io.github.fabasoad.crypto.BCrypt.hashpw;
 
-/**
- * @author efabizhevsky
- * created on 1/13/2017.
- */
 public class CryptoUtils {
 
     public static class BCrypt {
