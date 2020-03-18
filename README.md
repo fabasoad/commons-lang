@@ -6,6 +6,7 @@
 
 - io.github.fabasoad.annotations.UsedViaReflection
 - io.github.fabasoad.crypto.CryptoUtils.BCrypt
+- io.github.fabasoad.function.ConsumerThrowable
 - io.github.fabasoad.function.FiveConsumer
 - io.github.fabasoad.function.FourConsumer
 - io.github.fabasoad.function.FunctionThrowable
