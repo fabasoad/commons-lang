@@ -1,8 +1,8 @@
-package org.fabasoad.crypto;
+package io.github.fabasoad.crypto;
 
-import static org.fabasoad.crypto.BCrypt.checkpw;
-import static org.fabasoad.crypto.BCrypt.gensalt;
-import static org.fabasoad.crypto.BCrypt.hashpw;
+import static io.github.fabasoad.crypto.BCrypt.checkpw;
+import static io.github.fabasoad.crypto.BCrypt.genSalt;
+import static io.github.fabasoad.crypto.BCrypt.hashpw;
 
 /**
  * @author efabizhevsky
@@ -13,7 +13,7 @@ public class CryptoUtils {
     public static class BCrypt {
 
         public static String genSalt(int logRounds) {
-            return gensalt(logRounds);
+            return io.github.fabasoad.crypto.BCrypt.genSalt(logRounds);
         }
 
         public static String genSalt() {

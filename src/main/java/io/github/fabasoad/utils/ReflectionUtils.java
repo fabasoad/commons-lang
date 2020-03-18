@@ -1,4 +1,4 @@
-package org.fabasoad.utils;
+package io.github.fabasoad.utils;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
@@ -18,8 +18,8 @@ public class ReflectionUtils {
 
     private static Reflections create(String packageName) {
         return new Reflections(new ConfigurationBuilder()
-                .setUrls(ClasspathHelper.forPackage(packageName))
-                .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner()));
+            .setUrls(ClasspathHelper.forPackage(packageName))
+            .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner()));
     }
 
     public static <T extends Annotation> Set<Class<?>> getTypesAnnotatedWith(String packageName, Class<T> annotation) {
@@ -31,7 +31,7 @@ public class ReflectionUtils {
     }
 
     public static <T, R> Optional<R> invokeThrowable(
-            T obj, String methodName, Class<R> returnedType, Consumer<Throwable> handleException) {
+        T obj, String methodName, Class<R> returnedType, Consumer<Throwable> handleException) {
         Optional<R> result = Optional.empty();
         try {
             result = Optional.ofNullable(returnedType.cast(obj.getClass().getMethod(methodName).invoke(obj)));

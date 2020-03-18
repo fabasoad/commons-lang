@@ -1,4 +1,4 @@
-package org.fabasoad.function;
+package io.github.fabasoad.function;
 
 /**
  * @author Yevhen Fabizhevskyi
@@ -6,5 +6,5 @@ package org.fabasoad.function;
 @FunctionalInterface
 public interface FunctionThrowable<T, R, E extends Throwable> {
 
-    R apply(T obj) throws E;
+    R apply(T arg) throws E;
 }

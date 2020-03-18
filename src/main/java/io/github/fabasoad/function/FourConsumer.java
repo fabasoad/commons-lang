@@ -1,4 +1,4 @@
-package org.fabasoad.function;
+package io.github.fabasoad.function;
 
 /**
  * @author efabizhevsky
@@ -6,5 +6,5 @@ package org.fabasoad.function;
 @FunctionalInterface
 public interface FourConsumer<T1, T2, T3, T4> {
 
-    void accept(T1 t1, T2 t2, T3 t3, T4 t4);
+    void accept(T1 arg1, T2 arg2, T3 arg3, T4 arg4);
 }

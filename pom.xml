@@ -7,14 +7,18 @@
 
     <groupId>org.fabasoad</groupId>
     <artifactId>commons-lang</artifactId>
-    <version>0.3.1</version>
+    <version>0.4.0</version>
     <packaging>jar</packaging>
-    <url>https://jitpack.io/#fabasoad/commons-lang/0.3.1</url>
+    <url>https://jitpack.io/#fabasoad/commons-lang/0.4.0</url>
 
     <properties>
-        <reflections.version>0.9.10</reflections.version>
-        <commons-lang3.version>3.5</commons-lang3.version>
-        <junit.version>4.12</junit.version>
+        <java.version>14</java.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+        <reflections.version>0.9.12</reflections.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <junit-jupiter-api.version>5.6.0</junit-jupiter-api.version>
     </properties>
 
     <build>
@@ -22,15 +26,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -43,6 +47,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -67,9 +72,10 @@
             <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

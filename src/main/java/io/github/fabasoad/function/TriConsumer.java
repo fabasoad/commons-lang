@@ -1,4 +1,4 @@
-package org.fabasoad.function;
+package io.github.fabasoad.function;
 
 /**
  * @author Yevhen Fabizhevskyi
@@ -6,5 +6,5 @@ package org.fabasoad.function;
 @FunctionalInterface
 public interface TriConsumer<T1, T2, T3> {
 
-    void accept(T1 t1, T2 t2, T3 t3);
+    void accept(T1 arg1, T2 arg2, T3 arg3);
 }

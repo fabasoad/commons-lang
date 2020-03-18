@@ -1,6 +1,6 @@
-package org.fabasoad.utils;
+package io.github.fabasoad.utils;
 
-import org.fabasoad.function.FunctionThrowable;
+import io.github.fabasoad.function.FunctionThrowable;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -13,7 +13,7 @@ import static java.util.Objects.nonNull;
 public class StreamUtils {
 
     public static <T, R, E extends Throwable> Optional<R> map(
-            T obj, FunctionThrowable<T, R, E> function, Consumer<Throwable> handleException) {
+        T obj, FunctionThrowable<T, R, E> function, Consumer<Throwable> handleException) {
         Optional<R> result = Optional.empty();
         if (nonNull(obj) && nonNull(function) && nonNull(handleException)) {
             try {
