@@ -17,4 +17,4 @@
 ## Installation
 
 Follow the link below to see the installation details for _gradle_, _maven_, _sbt_ and _leiningen_.
-https://jitpack.io/#fabasoad/commons-lang/0.4.4
+https://jitpack.io/#fabasoad/commons-lang/0.4.5

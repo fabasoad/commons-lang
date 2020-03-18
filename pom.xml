@@ -5,11 +5,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.fabasoad</groupId>
+    <groupId>io.github.fabasoad</groupId>
     <artifactId>commons-lang</artifactId>
-    <version>0.4.4</version>
+    <version>0.4.5</version>
     <packaging>jar</packaging>
-    <url>https://jitpack.io/#fabasoad/commons-lang/0.4.4</url>
+    <url>https://jitpack.io/#fabasoad/commons-lang/0.4.5</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
