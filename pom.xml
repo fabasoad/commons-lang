@@ -7,12 +7,11 @@
 
     <groupId>org.fabasoad</groupId>
     <artifactId>commons-lang</artifactId>
-    <version>0.4.3</version>
+    <version>0.4.4</version>
     <packaging>jar</packaging>
-    <url>https://jitpack.io/#fabasoad/commons-lang/0.4.3</url>
+    <url>https://jitpack.io/#fabasoad/commons-lang/0.4.4</url>
 
     <properties>
-        <java.version>13</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -29,7 +28,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>${java.version}</release>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
