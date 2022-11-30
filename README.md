@@ -1,6 +1,10 @@
 # Commons library with helpful classes
 
-[![](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang) [![Build Status](https://travis-ci.org/fabasoad/commons-lang.svg?branch=master)](https://travis-ci.org/fabasoad/commons-lang) [![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/commons-lang.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/commons-lang/alerts/) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/fabasoad/commons-lang.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/commons-lang/context:java) [![Maintainability](https://api.codeclimate.com/v1/badges/5f545f6546b14c6e68e0/maintainability)](https://codeclimate.com/github/fabasoad/commons-lang/maintainability)
+> **This GitHub action is deprecated and no longer maintained starting from
+> `2022/11/30`. Please use [Apache Commons Lang](https://mvnrepository.com/artifact/org.apache.commons/commons-lang3)
+> instead.**
+
+[![](https://jitpack.io/v/fabasoad/commons-lang.svg)](https://jitpack.io/#fabasoad/commons-lang)
 
 ## List of items
 
